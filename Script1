@@ -1,0 +1,15 @@
+-- Tabla de Feriados
+CREATE TABLE Feriados (
+    Fecha DATE PRIMARY KEY,
+    Descripcion VARCHAR(100)
+);
+
+-- Tabla de Periodos
+CREATE TABLE Periodos (
+    ClaseDeDia VARCHAR(20),
+    Fecha DATE,
+    TotalHoras INT,
+    Horario VARCHAR(50),
+    PRIMARY KEY (ClaseDeDia, Fecha),
+    FOREIGN KEY (Fecha) REFERENCES Feriados(Fecha)
+); 
